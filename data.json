@@ -1,0 +1,23 @@
+[
+  {
+    "adjustment_id": 101,
+    "adjustment_start_date": "2021-12-10",
+    "adjustment_end_date": "2021-12-12",
+    "available_for_reviewer": true,
+    "adjustment_status": "DRAFT"
+  },
+  {
+    "adjustment_id": 102,
+    "adjustment_start_date": "2021-12-10",
+    "adjustment_end_date": "2021-12-12",
+    "available_for_reviewer": true,
+    "adjustment_status": "DRAFT"
+  },
+  {
+    "adjustment_id": 103,
+    "adjustment_start_date": "2021-12-10",
+    "adjustment_end_date": "2021-12-12",
+    "available_for_reviewer": true,
+    "adjustment_status": "DRAFT"
+  }
+]
