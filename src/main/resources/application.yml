@@ -13,6 +13,7 @@ spring:
     properties:
       hibernate:
         formate_sql: false
+        default_schema: adjustment
         jdbc:
           batch_size: 50
     show-sql: false

@@ -2,9 +2,9 @@ package com.nitesh.appuploaderservice.services;
 
 import com.nitesh.appuploaderservice.models.Adjustment;
 
-import java.io.File;
 import java.util.List;
 
-public interface UploaderService {
+public interface AdjustmentService {
     List<Adjustment> saveAdjustments(List<Adjustment> adjustments);
+    Adjustment saveAdjustment(Adjustment adjustment);
 }

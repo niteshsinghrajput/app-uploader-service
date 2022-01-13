@@ -59,7 +59,7 @@ public class ExcelUtil {
         Adjustment adjustment = new Adjustment();
         adjustment.setAdjustmentStartDate(currentRow.getCell(0).getDateCellValue().toString());
         adjustment.setAdjustmentEndDate(currentRow.getCell(1).getDateCellValue().toString());
-        adjustment.setAvailableForReviewer(Boolean.parseBoolean(currentRow.getCell(2).getStringCellValue()));
+        adjustment.setAvailableForReviewer(currentRow.getCell(2).getStringCellValue());
         adjustment.setAdjustmentStatus(currentRow.getCell(3).getStringCellValue());
         System.out.println("Adjustment while reading excel sheet "+adjustment);
         return adjustment;

@@ -27,7 +27,7 @@ public class JsonUtil {
                 adjustment.setAdjustmentId(jsonObject.getLong("adjustment_id"));
                 adjustment.setAdjustmentStartDate(jsonObject.getString("adjustment_start_date"));
                 adjustment.setAdjustmentEndDate(jsonObject.getString("adjustment_end_date"));
-                adjustment.setAvailableForReviewer(jsonObject.getBoolean("available_for_reviewer"));
+                adjustment.setAvailableForReviewer(jsonObject.getString("available_for_reviewer"));
                 adjustment.setAdjustmentStatus(jsonObject.getString("adjustment_status"));
                 adjustmentList.add(adjustment);
             }
