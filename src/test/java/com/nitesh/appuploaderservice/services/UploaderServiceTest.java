@@ -10,6 +10,8 @@ import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.util.Assert;
 
+import java.util.Date;
+
 @RunWith(MockitoJUnitRunner.class)
 public class UploaderServiceTest {
 
@@ -22,11 +24,11 @@ public class UploaderServiceTest {
     @Test
     public void createAdjustmentTest() {
         Adjustment adjustment = new Adjustment();
-        adjustment.setAdjustmentId(101L);
+        adjustment.setAdjustmentId(101);
         adjustment.setAdjustmentStatus("DRAFT");
         adjustment.setAvailableForReviewer("true");
-        adjustment.setAdjustmentStartDate("2022-01-01");
-        adjustment.setAdjustmentEndDate("2022-01-05");
+        adjustment.setAdjustmentStartDate(new Date("2022-01-01"));
+        adjustment.setAdjustmentEndDate(new Date("2022-01-05"));
        // Mockito.when(repository.save(Mockito.any(Adjustment.class))).thenReturn(new Adjustment());
         Adjustment createdAdjustment = service.saveAdjustment(adjustment);
         Assert.hasText(adjustment.getAdjustmentStatus(), createdAdjustment.getAdjustmentStatus());

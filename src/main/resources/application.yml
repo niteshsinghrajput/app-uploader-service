@@ -1,3 +1,9 @@
+logging:
+  level:
+    com.nitesh.appuploaderservice: INFO
+    org.hibernate: DEBUG
+    org.springframework.web: ERROR
+  path: logs
 spring:
   database:
     driverClassName: org.postgresql.Driver
@@ -16,5 +22,8 @@ spring:
         default_schema: adjustment
         jdbc:
           batch_size: 50
-    show-sql: false
-
+    show-sql: true
+#  jackson:
+#    serialization:
+#      write_dates_as_timestamps: false
+#      fail_on_empty_beans: false

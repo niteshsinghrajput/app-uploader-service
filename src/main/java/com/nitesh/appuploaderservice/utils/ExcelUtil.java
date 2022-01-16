@@ -57,8 +57,8 @@ public class ExcelUtil {
 
     private static Adjustment assignValuesToAdjustment(Row currentRow, int count) {
         Adjustment adjustment = new Adjustment();
-        adjustment.setAdjustmentStartDate(currentRow.getCell(0).getDateCellValue().toString());
-        adjustment.setAdjustmentEndDate(currentRow.getCell(1).getDateCellValue().toString());
+        adjustment.setAdjustmentStartDate(currentRow.getCell(0).getDateCellValue());
+        adjustment.setAdjustmentEndDate(currentRow.getCell(1).getDateCellValue());
         adjustment.setAvailableForReviewer(currentRow.getCell(2).getStringCellValue());
         adjustment.setAdjustmentStatus(currentRow.getCell(3).getStringCellValue());
         System.out.println("Adjustment while reading excel sheet "+adjustment);
