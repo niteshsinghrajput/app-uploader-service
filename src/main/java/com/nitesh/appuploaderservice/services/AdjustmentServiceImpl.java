@@ -29,7 +29,7 @@ public class AdjustmentServiceImpl implements AdjustmentService {
 
     @Override
     public Adjustment saveAdjustment(Adjustment adjustment) {
-        AdjustedDataExtract extract = adjustedDataExtractRepository.getById(adjustment.getAdjustedDataExtract().getDataExtractId());
+        AdjustedDataExtract extract = adjustedDataExtractRepository.getDataExtractById(adjustment.getAdjustedDataExtract().getDataExtractId());
         adjustment.setAdjustedDataExtract(extract);
         return repository.save(adjustment);
     }

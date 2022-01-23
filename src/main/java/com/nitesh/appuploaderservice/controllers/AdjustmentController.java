@@ -16,6 +16,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
+@CrossOrigin
 @RestController
 public class AdjustmentController {
 

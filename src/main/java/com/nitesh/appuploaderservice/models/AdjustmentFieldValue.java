@@ -4,13 +4,15 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "adjustment_field_values")
-@Data
-@JsonIgnoreProperties({"adjustment", "adjustment_field"})
+@Getter
+@Setter
 public class AdjustmentFieldValue {
 
     @Id
@@ -21,7 +23,6 @@ public class AdjustmentFieldValue {
     @Column(name = "field_value")
     @JsonProperty("field_value")
     private String fieldValue;
-
 
     @ManyToOne
     @JoinColumn(name = "adjustment_id")

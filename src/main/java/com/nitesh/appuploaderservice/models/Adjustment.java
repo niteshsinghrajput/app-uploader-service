@@ -5,6 +5,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -13,8 +15,8 @@ import java.util.List;
 
 @Entity
 @Table(name = "adjustment")
-@Data
-@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
+@Getter
+@Setter
 public class Adjustment implements Serializable {
 
     @Id
