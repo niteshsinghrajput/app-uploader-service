@@ -25,14 +25,14 @@ public class AdjustmentFieldServiceImpl implements AdjustmentFieldService {
     public List<AdjustmentFieldResponse> getAdjustmentFields(Integer adjustmentId) {
         List<AdjustmentFieldResponse> responses = new ArrayList<>();
         List<AdjustmentField> adjustmentFields = repository.findAll();
-        for(AdjustmentField adjustmentField: adjustmentFields){
+        for (AdjustmentField adjustmentField : adjustmentFields) {
             AdjustmentFieldResponse response = new AdjustmentFieldResponse();
             response.setFieldName(adjustmentField.getFieldName());
             response.setAdjustmentFieldId(adjustmentField.getAdjustmentFieldId());
             List<AdjustmentFieldValue> values = fieldValueRepository.getFieldValuesByFieldIdAndAdjustmentId(adjustmentField.getAdjustmentFieldId(), adjustmentId);
             List<AdjustmentFieldValueResponse> fieldValueResponses = new ArrayList<>();
-            if(values != null && !values.isEmpty()) {
-                for(AdjustmentFieldValue value: values) {
+            if (values != null && !values.isEmpty()) {
+                for (AdjustmentFieldValue value : values) {
                     AdjustmentFieldValueResponse valueResponse = new AdjustmentFieldValueResponse();
                     valueResponse.setFieldValue(value.getFieldValue());
                     valueResponse.setRecordId(value.getRecordId());
@@ -47,24 +47,29 @@ public class AdjustmentFieldServiceImpl implements AdjustmentFieldService {
     }
 
     @Override
-    public AdjustmentFieldResponse createAdjustmentField(AdjustmentField adjustmentField) {
+    public List<AdjustmentFieldResponse> createAdjustmentField(List<AdjustmentField> adjustmentFields) {
 
-       AdjustmentField createdField = repository.save(adjustmentField);
-
-       AdjustmentFieldResponse response = new AdjustmentFieldResponse();
-       response.setFieldName(createdField.getFieldName());
-       response.setAdjustmentFieldId(createdField.getAdjustmentFieldId());
-       List<AdjustmentFieldValue> values = fieldValueRepository.getFieldValuesByFieldId(adjustmentField.getAdjustmentFieldId());
-       List<AdjustmentFieldValueResponse> fieldValueResponses = new ArrayList<>();
-       if(fieldValueResponses != null && !fieldValueResponses.isEmpty()) {
-           for(AdjustmentFieldValue value: values) {
-               AdjustmentFieldValueResponse valueResponse = new AdjustmentFieldValueResponse();
-               valueResponse.setFieldValue(value.getFieldValue());
-               valueResponse.setRecordId(value.getRecordId());
-               fieldValueResponses.add(valueResponse);
-           }
-           response.setAdjustmentFieldValues(fieldValueResponses);
-       }
-       return response;
+        List<AdjustmentField> createdField = repository.saveAll(adjustmentFields);
+        List<AdjustmentFieldResponse> responses = new ArrayList<>();
+        if (createdField != null && !createdField.isEmpty()) {
+            for (AdjustmentField field : createdField) {
+                AdjustmentFieldResponse response = new AdjustmentFieldResponse();
+                response.setFieldName(field.getFieldName());
+                response.setAdjustmentFieldId(field.getAdjustmentFieldId());
+                List<AdjustmentFieldValue> values = fieldValueRepository.getFieldValuesByFieldId(field.getAdjustmentFieldId());
+                List<AdjustmentFieldValueResponse> fieldValueResponses = new ArrayList<>();
+                if (values != null && !values.isEmpty()) {
+                    for (AdjustmentFieldValue value : values) {
+                        AdjustmentFieldValueResponse valueResponse = new AdjustmentFieldValueResponse();
+                        valueResponse.setFieldValue(value.getFieldValue());
+                        valueResponse.setRecordId(value.getRecordId());
+                        fieldValueResponses.add(valueResponse);
+                    }
+                }
+                response.setAdjustmentFieldValues(fieldValueResponses);
+                responses.add(response);
+            }
+        }
+        return responses;
     }
 }

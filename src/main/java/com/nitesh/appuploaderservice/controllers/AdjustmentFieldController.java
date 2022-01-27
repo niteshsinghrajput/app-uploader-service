@@ -22,7 +22,7 @@ public class AdjustmentFieldController {
     }
 
     @PostMapping
-    public AdjustmentFieldResponse createAdjustmentField(@RequestBody AdjustmentField adjustmentField) {
-        return service.createAdjustmentField(adjustmentField);
+    public List<AdjustmentFieldResponse> createAdjustmentField(@RequestBody List<AdjustmentField> adjustmentFields) {
+        return service.createAdjustmentField(adjustmentFields);
     }
 }

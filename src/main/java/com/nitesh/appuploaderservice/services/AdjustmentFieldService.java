@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface AdjustmentFieldService {
     List<AdjustmentFieldResponse> getAdjustmentFields(Integer adjustmentId);
-    AdjustmentFieldResponse createAdjustmentField(AdjustmentField adjustmentField);
+    List<AdjustmentFieldResponse> createAdjustmentField(List<AdjustmentField> adjustmentFields);
 }
