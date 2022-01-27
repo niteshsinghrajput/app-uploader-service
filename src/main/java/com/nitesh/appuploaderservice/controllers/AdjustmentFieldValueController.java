@@ -22,8 +22,9 @@ public class AdjustmentFieldValueController {
     }
 
     @PostMapping
-    public AdjustmentFieldValueResponse createAdjustedFieldValue(@RequestBody AdjustmentFieldValue adjustmentFieldValue) {
+    public List<AdjustmentFieldValueResponse> createAdjustedFieldValue(@RequestBody List<AdjustmentFieldValue> adjustmentFieldValue) {
         return service.createFieldValue(adjustmentFieldValue);
     }
+
 }
 

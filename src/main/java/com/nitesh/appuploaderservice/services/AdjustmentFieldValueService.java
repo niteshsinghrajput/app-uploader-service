@@ -6,6 +6,6 @@ import com.nitesh.appuploaderservice.models.AdjustmentFieldValueResponse;
 import java.util.List;
 
 public interface AdjustmentFieldValueService {
-    AdjustmentFieldValueResponse createFieldValue(AdjustmentFieldValue adjustmentFieldValue);
+    List<AdjustmentFieldValueResponse> createFieldValue(List<AdjustmentFieldValue> adjustmentFieldValues);
     List<AdjustmentFieldValue> getAdjustmentFieldValues();
 }

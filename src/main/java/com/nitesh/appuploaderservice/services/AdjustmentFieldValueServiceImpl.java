@@ -10,6 +10,7 @@ import com.nitesh.appuploaderservice.repositories.AdjustmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -25,18 +26,22 @@ public class AdjustmentFieldValueServiceImpl implements AdjustmentFieldValueServ
     private AdjustmentRepository adjustmentRepository;
 
     @Override
-    public AdjustmentFieldValueResponse createFieldValue(AdjustmentFieldValue adjustmentFieldValue) {
-        System.out.println(adjustmentFieldValue);
-
-        AdjustmentField adjustmentField = adjustmentFieldRepository.getAdjustmentFieldByFieldId(adjustmentFieldValue.getAdjustmentFieldData().getAdjustmentFieldId());
-        Adjustment adjustment = adjustmentRepository.getAdjustmentByAdjustmentId(adjustmentFieldValue.getAdjustment().getAdjustmentId());
-        adjustmentFieldValue.setAdjustmentFieldData(adjustmentField);
-        adjustmentFieldValue.setAdjustment(adjustment);
-        AdjustmentFieldValueResponse fieldValue = new AdjustmentFieldValueResponse();
-        AdjustmentFieldValue  createdAdjustmentFieldValue = repository.save(adjustmentFieldValue);
-        fieldValue.setFieldValue(createdAdjustmentFieldValue.getFieldValue());
-        fieldValue.setRecordId(createdAdjustmentFieldValue.getRecordId());
-        return fieldValue;
+    public List<AdjustmentFieldValueResponse> createFieldValue(List<AdjustmentFieldValue> adjustmentFieldValues) {
+        List<AdjustmentFieldValueResponse> responses = new ArrayList<>();
+        if(adjustmentFieldValues != null && !adjustmentFieldValues.isEmpty()) {
+            for(AdjustmentFieldValue value: adjustmentFieldValues) {
+                AdjustmentField adjustmentField = adjustmentFieldRepository.getAdjustmentFieldByFieldId(value.getAdjustmentFieldData().getAdjustmentFieldId());
+                Adjustment adjustment = adjustmentRepository.getAdjustmentByAdjustmentId(value.getAdjustment().getAdjustmentId());
+                value.setAdjustmentFieldData(adjustmentField);
+                value.setAdjustment(adjustment);
+                AdjustmentFieldValueResponse fieldValue = new AdjustmentFieldValueResponse();
+                AdjustmentFieldValue  createdAdjustmentFieldValue = repository.save(value);
+                fieldValue.setFieldValue(createdAdjustmentFieldValue.getFieldValue());
+                fieldValue.setRecordId(createdAdjustmentFieldValue.getRecordId());
+                responses.add(fieldValue);
+            }
+        }
+        return responses;
     }
 
     @Override

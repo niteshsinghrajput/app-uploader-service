@@ -17,8 +17,8 @@ public class AdjustmentFieldController {
     private AdjustmentFieldService service;
 
     @GetMapping
-    public List<AdjustmentFieldResponse> getAdjustmentFields() {
-        return service.getAdjustmentFields();
+    public List<AdjustmentFieldResponse> getAdjustmentFields(@RequestParam("adjustment_id") Integer adjustmentId) {
+        return service.getAdjustmentFields(adjustmentId);
     }
 
     @PostMapping

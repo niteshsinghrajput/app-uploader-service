@@ -22,14 +22,14 @@ public class AdjustmentFieldServiceImpl implements AdjustmentFieldService {
     private AdjustmentFieldValueRepository fieldValueRepository;
 
     @Override
-    public List<AdjustmentFieldResponse> getAdjustmentFields() {
+    public List<AdjustmentFieldResponse> getAdjustmentFields(Integer adjustmentId) {
         List<AdjustmentFieldResponse> responses = new ArrayList<>();
         List<AdjustmentField> adjustmentFields = repository.findAll();
         for(AdjustmentField adjustmentField: adjustmentFields){
             AdjustmentFieldResponse response = new AdjustmentFieldResponse();
             response.setFieldName(adjustmentField.getFieldName());
             response.setAdjustmentFieldId(adjustmentField.getAdjustmentFieldId());
-            List<AdjustmentFieldValue> values = fieldValueRepository.getFieldValuesByFieldId(adjustmentField.getAdjustmentFieldId());
+            List<AdjustmentFieldValue> values = fieldValueRepository.getFieldValuesByFieldIdAndAdjustmentId(adjustmentField.getAdjustmentFieldId(), adjustmentId);
             List<AdjustmentFieldValueResponse> fieldValueResponses = new ArrayList<>();
             if(values != null && !values.isEmpty()) {
                 for(AdjustmentFieldValue value: values) {
