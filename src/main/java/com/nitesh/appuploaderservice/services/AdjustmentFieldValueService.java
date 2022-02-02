@@ -8,4 +8,5 @@ import java.util.List;
 public interface AdjustmentFieldValueService {
     List<AdjustmentFieldValueResponse> createFieldValue(List<AdjustmentFieldValue> adjustmentFieldValues);
     List<AdjustmentFieldValue> getAdjustmentFieldValues();
+    void deleteAdjustmentValues(List<Integer> recordIds);
 }

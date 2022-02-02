@@ -48,4 +48,13 @@ public class AdjustmentFieldValueServiceImpl implements AdjustmentFieldValueServ
     public List<AdjustmentFieldValue> getAdjustmentFieldValues() {
         return repository.findAll();
     }
+
+    @Override
+    public void deleteAdjustmentValues(List<Integer> recordIds) {
+        if(recordIds != null) {
+            for(Integer recordId: recordIds) {
+                repository.deleteById(recordId);
+            }
+        }
+    }
 }

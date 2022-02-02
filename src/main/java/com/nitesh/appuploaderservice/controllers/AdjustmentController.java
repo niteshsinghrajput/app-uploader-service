@@ -1,6 +1,7 @@
 package com.nitesh.appuploaderservice.controllers;
 
 import com.nitesh.appuploaderservice.models.Adjustment;
+import com.nitesh.appuploaderservice.models.DeleteAdjustmentResponse;
 import com.nitesh.appuploaderservice.services.AdjustmentService;
 import com.nitesh.appuploaderservice.utils.ExcelUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,18 +34,35 @@ public class AdjustmentController {
         return adjustmentService.saveAdjustments(adjustments);
     }
 
+    @PutMapping("adjustments/{adjustmentId}")
+    public Adjustment updateAdjustments(@PathVariable("adjustmentId") Integer adjustmentId, @RequestBody Adjustment adjustment) {
+        return adjustmentService.updateAdjustment(adjustmentId, adjustment);
+    }
+
+    @DeleteMapping("adjustments/{adjustmentId}")
+    public DeleteAdjustmentResponse deleteAdjustment(@PathVariable("adjustmentId") Integer adjustmentId) {
+        DeleteAdjustmentResponse response = null;
+        Boolean isDeleted = adjustmentService.deleteAdjustment(adjustmentId);
+        if (isDeleted) {
+            response = new DeleteAdjustmentResponse();
+            response.setAdjustmentId(adjustmentId);
+            response.setMessage("Adjustment deleted successfully");
+        }
+        return response;
+    }
+
     @PostMapping("upload-adjustments")
     public ResponseEntity<String> uploadDsrBsnlFile(@RequestParam("file") MultipartFile file) {
 
         String UPLOADED_FOLDER = "./adjustment_data/";
-        if(file.isEmpty()) {
+        if (file.isEmpty()) {
             return new ResponseEntity<String>("Please Select a File to Upload", HttpStatus.BAD_REQUEST);
         }
         try {
 
             InputStream in = file.getInputStream();
             Path path = Paths.get(UPLOADED_FOLDER);
-            String fileLocation = path +"/"+ file.getOriginalFilename();
+            String fileLocation = path + "/" + file.getOriginalFilename();
             FileOutputStream f = new FileOutputStream(fileLocation);
             int ch = 0;
             while ((ch = in.read()) != -1) {
@@ -57,12 +75,12 @@ public class AdjustmentController {
             List<Adjustment> adjustments = ExcelUtil.readExcelData(excelFile);
             System.out.println("adjustments : " + adjustments);
             boolean status = true; //service.saveDsrBsnl(dsrBsnlDataList);
-            if(status) {
-                return new ResponseEntity<String>("File ["+ file.getOriginalFilename() +"] has been uploaded Successfully", HttpStatus.OK);
+            if (status) {
+                return new ResponseEntity<String>("File [" + file.getOriginalFilename() + "] has been uploaded Successfully", HttpStatus.OK);
             }
 
-        } catch(Exception e) {
-            System.out.println("error occurred "+ e);
+        } catch (Exception e) {
+            System.out.println("error occurred " + e);
             e.printStackTrace();
         }
 

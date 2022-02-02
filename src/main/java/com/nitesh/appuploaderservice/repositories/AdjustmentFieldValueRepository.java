@@ -11,11 +11,20 @@ import java.util.List;
 
 @Repository
 public interface AdjustmentFieldValueRepository extends JpaRepository<AdjustmentFieldValue, Integer> {
+
     String SQL = "SELECT * FROM {h-schema}adjustment_field_values WHERE field_id=:fieldId AND adjustment_id=:adjustmentId";
+
     @Query(value = SQL, nativeQuery = true)
     List<AdjustmentFieldValue> getFieldValuesByFieldIdAndAdjustmentId(@Param("fieldId") Integer fieldId, @Param("adjustmentId") Integer adjustmentId);
 
     String GET_VALUE = "SELECT * FROM {h-schema}adjustment_field_values WHERE field_id=:fieldId";
+
     @Query(value = GET_VALUE, nativeQuery = true)
     List<AdjustmentFieldValue> getFieldValuesByFieldId(@Param("fieldId") Integer fieldId);
+
+    String GET_VALUES_BY_ADJUSTMENT_ID = "SELECT * from {h-schema}adjustment_field_values WHERE adjustment_id=:adjustmentId";
+
+    @Query(value = GET_VALUES_BY_ADJUSTMENT_ID, nativeQuery = true)
+    List<AdjustmentFieldValue> getAdjustmentFieldValuesByAdjustmentId(@Param("adjustmentId") Integer adjustmentId);
+
 }

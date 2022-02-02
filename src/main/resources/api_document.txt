@@ -433,4 +433,374 @@ Response:
     }
 ]
 
+Get Adjustments
+Type: GET
+URL: http://localhost:8080/adjustments
+Response:
+[
+    {
+        "adjustment_id": 4,
+        "adjustment_start_date": "2022-01-01",
+        "adjustment_end_date": "2022-01-10",
+        "available_for_reviewer": "true",
+        "adjustment_status": "DRAFT",
+        "adjusted_data_extract": {
+            "createdTime": "2021-12-31T18:30:00.000+00:00",
+            "fileLocation": "C:/test_data/data.json",
+            "uploadTime": "2021-12-31T18:30:00.000+00:00",
+            "data_extract_id": 1
+        }
+    },
+    {
+        "adjustment_id": 5,
+        "adjustment_start_date": "2022-01-02",
+        "adjustment_end_date": "2022-01-11",
+        "available_for_reviewer": "true",
+        "adjustment_status": "APPROVED",
+        "adjusted_data_extract": {
+            "createdTime": "2021-12-31T18:30:00.000+00:00",
+            "fileLocation": "C:/test_data/data.json",
+            "uploadTime": "2021-12-31T18:30:00.000+00:00",
+            "data_extract_id": 1
+        }
+    },
+    {
+        "adjustment_id": 8,
+        "adjustment_start_date": "2022-01-02",
+        "adjustment_end_date": "2022-01-11",
+        "available_for_reviewer": "true",
+        "adjustment_status": "SUBMITTED",
+        "adjusted_data_extract": {
+            "createdTime": "2021-12-31T18:30:00.000+00:00",
+            "fileLocation": "C:/test_data/data.json",
+            "uploadTime": "2021-12-31T18:30:00.000+00:00",
+            "data_extract_id": 1
+        }
+    },
+    {
+        "adjustment_id": 10,
+        "adjustment_start_date": "2022-01-02",
+        "adjustment_end_date": "2022-01-12",
+        "available_for_reviewer": "true",
+        "adjustment_status": "SUBMITTED",
+        "adjusted_data_extract": {
+            "createdTime": "2021-12-31T18:30:00.000+00:00",
+            "fileLocation": "C:/test_data/data.json",
+            "uploadTime": "2021-12-31T18:30:00.000+00:00",
+            "data_extract_id": 1
+        }
+    },
+    {
+        "adjustment_id": 11,
+        "adjustment_start_date": "2022-01-02",
+        "adjustment_end_date": "2022-01-12",
+        "available_for_reviewer": "true",
+        "adjustment_status": "REJECTED",
+        "adjusted_data_extract": {
+            "createdTime": "2021-12-31T18:30:00.000+00:00",
+            "fileLocation": "C:/test_data/data.json",
+            "uploadTime": "2021-12-31T18:30:00.000+00:00",
+            "data_extract_id": 1
+        }
+    },
+    {
+        "adjustment_id": 12,
+        "adjustment_start_date": "2022-01-02",
+        "adjustment_end_date": "2022-01-12",
+        "available_for_reviewer": "true",
+        "adjustment_status": "REJECTED",
+        "adjusted_data_extract": {
+            "createdTime": "2021-12-31T18:30:00.000+00:00",
+            "fileLocation": "C:/test_data/data.json",
+            "uploadTime": "2021-12-31T18:30:00.000+00:00",
+            "data_extract_id": 1
+        }
+    },
+    {
+        "adjustment_id": 13,
+        "adjustment_start_date": "2022-01-02",
+        "adjustment_end_date": "2022-01-12",
+        "available_for_reviewer": "true",
+        "adjustment_status": "REJECTED",
+        "adjusted_data_extract": {
+            "createdTime": "2021-12-31T18:30:00.000+00:00",
+            "fileLocation": "C:/test_data/data.json",
+            "uploadTime": "2021-12-31T18:30:00.000+00:00",
+            "data_extract_id": 1
+        }
+    },
+    {
+        "adjustment_id": 14,
+        "adjustment_start_date": "2022-01-02",
+        "adjustment_end_date": "2022-01-15",
+        "available_for_reviewer": "false",
+        "adjustment_status": "REJECTED",
+        "adjusted_data_extract": {
+            "createdTime": "2021-12-31T18:30:00.000+00:00",
+            "fileLocation": "C:/test_data/data.json",
+            "uploadTime": "2021-12-31T18:30:00.000+00:00",
+            "data_extract_id": 1
+        }
+    },
+    {
+        "adjustment_id": 15,
+        "adjustment_start_date": "2022-01-02",
+        "adjustment_end_date": "2022-01-15",
+        "available_for_reviewer": "false",
+        "adjustment_status": "REJECTED",
+        "adjusted_data_extract": {
+            "createdTime": "2021-12-31T18:30:00.000+00:00",
+            "fileLocation": "C:/test_data/data.json",
+            "uploadTime": "2021-12-31T18:30:00.000+00:00",
+            "data_extract_id": 1
+        }
+    },
+    {
+        "adjustment_id": 16,
+        "adjustment_start_date": "2022-01-02",
+        "adjustment_end_date": "2022-01-15",
+        "available_for_reviewer": "false",
+        "adjustment_status": "REJECTED",
+        "adjusted_data_extract": {
+            "createdTime": "2021-12-31T18:30:00.000+00:00",
+            "fileLocation": "C:/test_data/data.json",
+            "uploadTime": "2021-12-31T18:30:00.000+00:00",
+            "data_extract_id": 1
+        }
+    },
+    {
+        "adjustment_id": 17,
+        "adjustment_start_date": "2022-01-02",
+        "adjustment_end_date": "2022-01-15",
+        "available_for_reviewer": "false",
+        "adjustment_status": "REJECTED",
+        "adjusted_data_extract": {
+            "createdTime": "2021-12-31T18:30:00.000+00:00",
+            "fileLocation": "C:/test_data/data.json",
+            "uploadTime": "2021-12-31T18:30:00.000+00:00",
+            "data_extract_id": 1
+        }
+    },
+    {
+        "adjustment_id": 18,
+        "adjustment_start_date": "2022-01-02",
+        "adjustment_end_date": "2022-01-15",
+        "available_for_reviewer": "false",
+        "adjustment_status": "REJECTED",
+        "adjusted_data_extract": {
+            "createdTime": "2021-12-31T18:30:00.000+00:00",
+            "fileLocation": "C:/test_data/data.json",
+            "uploadTime": "2021-12-31T18:30:00.000+00:00",
+            "data_extract_id": 1
+        }
+    },
+    {
+        "adjustment_id": 19,
+        "adjustment_start_date": "2022-01-02",
+        "adjustment_end_date": "2022-01-15",
+        "available_for_reviewer": "false",
+        "adjustment_status": "REJECTED",
+        "adjusted_data_extract": {
+            "createdTime": "2021-12-31T18:30:00.000+00:00",
+            "fileLocation": "C:/test_data/data.json",
+            "uploadTime": "2021-12-31T18:30:00.000+00:00",
+            "data_extract_id": 1
+        }
+    },
+    {
+        "adjustment_id": 20,
+        "adjustment_start_date": "2022-01-02",
+        "adjustment_end_date": "2022-01-15",
+        "available_for_reviewer": "false",
+        "adjustment_status": "REJECTED",
+        "adjusted_data_extract": {
+            "createdTime": "2021-12-31T18:30:00.000+00:00",
+            "fileLocation": "C:/test_data/data.json",
+            "uploadTime": "2021-12-31T18:30:00.000+00:00",
+            "data_extract_id": 1
+        }
+    },
+    {
+        "adjustment_id": 21,
+        "adjustment_start_date": "2022-01-02",
+        "adjustment_end_date": "2022-01-15",
+        "available_for_reviewer": "false",
+        "adjustment_status": "REJECTED",
+        "adjusted_data_extract": {
+            "createdTime": "2021-12-31T18:30:00.000+00:00",
+            "fileLocation": "C:/test_data/data.json",
+            "uploadTime": "2021-12-31T18:30:00.000+00:00",
+            "data_extract_id": 1
+        }
+    },
+    {
+        "adjustment_id": 22,
+        "adjustment_start_date": "2022-01-02",
+        "adjustment_end_date": "2022-01-15",
+        "available_for_reviewer": "false",
+        "adjustment_status": "REJECTED",
+        "adjusted_data_extract": {
+            "createdTime": "2021-12-31T18:30:00.000+00:00",
+            "fileLocation": "C:/test_data/data.json",
+            "uploadTime": "2021-12-31T18:30:00.000+00:00",
+            "data_extract_id": 1
+        }
+    },
+    {
+        "adjustment_id": 23,
+        "adjustment_start_date": "2022-01-02",
+        "adjustment_end_date": "2022-01-15",
+        "available_for_reviewer": "false",
+        "adjustment_status": "REJECTED",
+        "adjusted_data_extract": {
+            "createdTime": "2021-12-31T18:30:00.000+00:00",
+            "fileLocation": "C:/test_data/data.json",
+            "uploadTime": "2021-12-31T18:30:00.000+00:00",
+            "data_extract_id": 1
+        }
+    },
+    {
+        "adjustment_id": 24,
+        "adjustment_start_date": "2022-01-02",
+        "adjustment_end_date": "2022-01-15",
+        "available_for_reviewer": "false",
+        "adjustment_status": "REJECTED",
+        "adjusted_data_extract": {
+            "createdTime": "2021-12-31T18:30:00.000+00:00",
+            "fileLocation": "C:/test_data/data.json",
+            "uploadTime": "2021-12-31T18:30:00.000+00:00",
+            "data_extract_id": 1
+        }
+    },
+    {
+        "adjustment_id": 25,
+        "adjustment_start_date": "2022-01-02",
+        "adjustment_end_date": "2022-01-15",
+        "available_for_reviewer": "false",
+        "adjustment_status": "REJECTED",
+        "adjusted_data_extract": {
+            "createdTime": "2021-12-31T18:30:00.000+00:00",
+            "fileLocation": "C:/test_data/data.json",
+            "uploadTime": "2021-12-31T18:30:00.000+00:00",
+            "data_extract_id": 1
+        }
+    },
+    {
+        "adjustment_id": 26,
+        "adjustment_start_date": "2022-01-02",
+        "adjustment_end_date": "2022-01-15",
+        "available_for_reviewer": "false",
+        "adjustment_status": "REJECTED",
+        "adjusted_data_extract": {
+            "createdTime": "2021-12-31T18:30:00.000+00:00",
+            "fileLocation": "C:/test_data/data.json",
+            "uploadTime": "2021-12-31T18:30:00.000+00:00",
+            "data_extract_id": 1
+        }
+    },
+    {
+        "adjustment_id": 27,
+        "adjustment_start_date": "2022-01-12",
+        "adjustment_end_date": "2022-01-17",
+        "available_for_reviewer": "true",
+        "adjustment_status": "APPROVED",
+        "adjusted_data_extract": {
+            "createdTime": "2021-12-31T18:30:00.000+00:00",
+            "fileLocation": "C:/test_data/data.json",
+            "uploadTime": "2021-12-31T18:30:00.000+00:00",
+            "data_extract_id": 1
+        }
+    },
+    {
+        "adjustment_id": 28,
+        "adjustment_start_date": "2022-01-12",
+        "adjustment_end_date": "2022-01-17",
+        "available_for_reviewer": "true",
+        "adjustment_status": "APPROVED",
+        "adjusted_data_extract": {
+            "createdTime": "2021-12-31T18:30:00.000+00:00",
+            "fileLocation": "C:/test_data/data.json",
+            "uploadTime": "2021-12-31T18:30:00.000+00:00",
+            "data_extract_id": 1
+        }
+    },
+    {
+        "adjustment_id": 29,
+        "adjustment_start_date": "2022-01-16",
+        "adjustment_end_date": "2022-01-16",
+        "available_for_reviewer": "false",
+        "adjustment_status": "REJECTED",
+        "adjusted_data_extract": {
+            "createdTime": "2021-12-31T18:30:00.000+00:00",
+            "fileLocation": "C:/test_data/data.json",
+            "uploadTime": "2021-12-31T18:30:00.000+00:00",
+            "data_extract_id": 1
+        }
+    },
+    {
+        "adjustment_id": 30,
+        "adjustment_start_date": "2022-01-22",
+        "adjustment_end_date": "2022-01-27",
+        "available_for_reviewer": "true",
+        "adjustment_status": "APPROVED",
+        "adjusted_data_extract": {
+            "createdTime": "2021-12-31T18:30:00.000+00:00",
+            "fileLocation": "C:/test_data/data.json",
+            "uploadTime": "2021-12-31T18:30:00.000+00:00",
+            "data_extract_id": 1
+        }
+    },
+    {
+        "adjustment_id": 3,
+        "adjustment_start_date": "2022-01-01",
+        "adjustment_end_date": "2022-01-10",
+        "available_for_reviewer": "true",
+        "adjustment_status": "SUBMITTED",
+        "adjusted_data_extract": {
+            "createdTime": "2021-12-31T18:30:00.000+00:00",
+            "fileLocation": "C:/test_data/data.json",
+            "uploadTime": "2021-12-31T18:30:00.000+00:00",
+            "data_extract_id": 1
+        }
+    }
+]
+
+Update Adjustments
+Type: PUT
+URL: http://localhost:8080/adjustments/3
+Request Payload:
+Request Payload:
+
+    {
+        "adjustment_id": 3,
+        "adjustment_start_date": "2022-01-01",
+        "adjustment_end_date": "2022-01-10",
+        "available_for_reviewer": "true",
+        "adjustment_status": "SUBMITTED",
+        "adjusted_data_extract": {
+            "data_extract_id": 1
+        }
+    }
+
+Response:
+
+{
+    "adjustment_id": 3,
+    "adjustment_start_date": "2022-01-01",
+    "adjustment_end_date": "2022-01-10",
+    "available_for_reviewer": "true",
+    "adjustment_status": "SUBMITTED",
+    "adjusted_data_extract": {
+        "createdTime": "2021-12-31T18:30:00.000+00:00",
+        "fileLocation": "C:/test_data/data.json",
+        "uploadTime": "2021-12-31T18:30:00.000+00:00",
+        "data_extract_id": 1
+    }
+}
+
+Delete a particular adjustment
+TYPE: DELETE
+URL: http://localhost:8080/adjustments/3
+Response:
+
 

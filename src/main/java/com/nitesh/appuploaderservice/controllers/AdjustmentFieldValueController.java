@@ -26,5 +26,11 @@ public class AdjustmentFieldValueController {
         return service.createFieldValue(adjustmentFieldValue);
     }
 
+    @DeleteMapping
+    public String deleteFieldValues(@RequestParam("record_id")List<Integer> recordIds) {
+        service.deleteAdjustmentValues(recordIds);
+        return "field values for record ids "+recordIds+" have been deleted successfully";
+    }
+
 }
 
